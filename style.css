@@ -1,0 +1,186 @@
+/* Подключение шрифта Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* шапка */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;                /* или вашу высоту */
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+  }
+  
+/* логотип слева */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 30px;                  /* отступ от левого края */
+    transform: translateY(-50%);
+    background-color: #e4002b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* меню по центру экрана */
+header nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;                   /* расстояние между пунктами */
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e4002b;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-top: 80px;
+    text-align: center;
+}
+
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* по 2 фиксированных колонки */
+    justify-content: center; /* центрируем сетку */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card-small {
+    width: 250px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-small h3 {
+    margin: 0 0 10px;
+}
+
+.card-small .button {
+    margin-top: 10px;
+}
+
+
+.card {
+    width: 250px;
+    min-height: 250px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e4002b;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: #c30024;
+}
+
+.img-course {
+    border: 5px solid #c30024;
+    border-radius: 15px;
+    padding: 5px;
+} 
+
+ul, ul li {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+/* адаптив для телефонов */
+@media (max-width: 600px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+}

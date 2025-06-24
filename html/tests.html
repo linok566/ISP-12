@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тест по модулям — Rostic's Staff</title>
+  <link rel="icon" href="../media/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .question h3 {
+      margin-bottom: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px solid #cc0000;
+      border-radius: 10px;
+      background: #fff6f6;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ROSTIC'S STAFF</div>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="modules.html">Обучение</a></li>
+      <li><a href="tests.html">Тесты</a></li>
+      <li><a href="about.html">О компании</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="course-page">
+    <h1>Тест по модулям</h1>
+    <p>Ответьте на вопросы, чтобы проверить знания по курсам обучения. После завершения вы увидите результат и рекомендации.</p>
+
+    <form id="testForm">
+
+      <div class="question" data-module="Стандарты обслуживания">
+        <h3>1. Какое правило важно соблюдать при приветствии гостя?</h3>
+        <label><input type="radio" name="q1" value="wrong"> Игнорировать гостя, если он занят</label><br>
+        <label><input type="radio" name="q1" value="correct"> Установить зрительный контакт и улыбнуться</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Обратиться только после оформления заказа</label>
+      </div>
+
+      <div class="question" data-module="Гигиена и безопасность">
+        <h3>2. Сколько раз в день сотрудники обязаны мыть руки?</h3>
+        <label><input type="radio" name="q2" value="correct"> Перед началом смены, перед каждым контактом с продуктами</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Только утром</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Один раз в конце смены</label>
+      </div>
+
+      <div class="question" data-module="Приготовление блюд">
+        <h3>3. Что проверяется при контроле качества перед подачей блюда?</h3>
+        <label><input type="radio" name="q3" value="wrong"> Только скорость приготовления</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Название блюда</label><br>
+        <label><input type="radio" name="q3" value="correct"> Внешний вид, температура и комплектация</label>
+      </div>
+
+      <div class="question" data-module="Коммуникация с клиентами">
+        <h3>4. Как правильно реагировать на жалобу клиента?</h3>
+        <label><input type="radio" name="q4" value="wrong"> Сразу пригласить менеджера</label><br>
+        <label><input type="radio" name="q4" value="wrong"> Спорить с клиентом</label><br>
+        <label><input type="radio" name="q4" value="correct"> Выслушать, извиниться и предложить решение</label>
+      </div>
+
+      <div class="question" data-module="Стандарты обслуживания">
+        <h3>5. Что является частью завершения обслуживания?</h3>
+        <label><input type="radio" name="q5" value="correct"> Благодарность за визит и прощание</label><br>
+        <label><input type="radio" name="q5" value="wrong"> Просьба оставить чаевые</label><br>
+        <label><input type="radio" name="q5" value="wrong"> Игнорирование гостя</label>
+      </div>
+
+      <div class="question" data-module="Гигиена и безопасность">
+        <h3>6. Что запрещено хранить в производственной зоне?</h3>
+        <label><input type="radio" name="q6" value="wrong"> Упаковку для блюд</label><br>
+        <label><input type="radio" name="q6" value="correct"> Личные вещи</label><br>
+        <label><input type="radio" name="q6" value="wrong"> Приправы</label>
+      </div>
+
+      <div class="question" data-module="Приготовление блюд">
+        <h3>7. Что делать при обнаружении неисправного оборудования?</h3>
+        <label><input type="radio" name="q7" value="wrong"> Попытаться починить самостоятельно</label><br>
+        <label><input type="radio" name="q7" value="correct"> Сообщить менеджеру и прекратить использование</label><br>
+        <label><input type="radio" name="q7" value="wrong"> Продолжить работу</label>
+      </div>
+
+      <div class="question" data-module="Коммуникация с клиентами">
+        <h3>8. Что помогает формировать лояльность у гостей?</h3>
+        <label><input type="radio" name="q8" value="correct"> Индивидуальный подход и внимание</label><br>
+        <label><input type="radio" name="q8" value="wrong"> Быстрое обслуживание без слов</label><br>
+        <label><input type="radio" name="q8" value="wrong"> Повышение цен</label>
+      </div>
+
+      <p style="margin-top: 20px;">
+        <button type="button" class="button" onclick="checkTest()">Проверить ответы</button>
+        <button type="button" class="button" onclick="resetTest()">Сбросить тест</button>
+      </p>
+
+
+    </form>
+
+    <div id="result" class="result" style="display:none;"></div>
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Rostic’s. Все права защищены.</p>
+</footer>
+
+<script>
+    function checkTest() {
+      const form = document.getElementById('testForm');
+      const questions = form.querySelectorAll('.question');
+      let total = questions.length;
+      let correct = 0;
+      let mistakesByModule = {};
+    
+      questions.forEach((q, index) => {
+        const checked = q.querySelector('input[type="radio"]:checked');
+        const moduleName = q.getAttribute('data-module');
+    
+        if (checked) {
+          if (checked.value === 'correct') {
+            correct++;
+          } else {
+            if (!mistakesByModule[moduleName]) {
+              mistakesByModule[moduleName] = 0;
+            }
+            mistakesByModule[moduleName]++;
+          }
+        } else {
+          // Если вопрос пропущен, считаем как ошибку
+          if (!mistakesByModule[moduleName]) {
+            mistakesByModule[moduleName] = 0;
+          }
+          mistakesByModule[moduleName]++;
+        }
+      });
+    
+      let percent = Math.round((correct / total) * 100);
+    
+      let message = `Результат: ${percent}% правильных ответов.<br>`;
+      if (percent === 100) {
+        message += "Отличная работа! Все модули изучены на отлично.";
+      } else {
+        message += "Рекомендуется повторить следующие модули:<ul>";
+        for (let mod in mistakesByModule) {
+          if (mistakesByModule[mod] > 0) {
+            message += `<li>${mod} (${mistakesByModule[mod]} ошибок)</li>`;
+          }
+        }
+        message += "</ul>";
+      }
+    
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = message;
+      resultDiv.style.display = 'block';
+    }
+    
+    function resetTest() {
+      const form = document.getElementById('testForm');
+      form.reset();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+      resultDiv.style.display = 'none';
+    }
+</script>
+    
+
+</body>
+</html>
